@@ -7,15 +7,13 @@ on:
 jobs:
   Publish-package:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 19.1.0
-          registry-url: https://registry.npmjs.org
+          registry-url: https://npm.pkg.github.com/
+          scope: "@jboucly"
 
       - run: |
           yarn publish
