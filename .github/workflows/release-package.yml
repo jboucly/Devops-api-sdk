@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  publish-gpr:
+  Publish-package:
     runs-on: ubuntu-latest
     permissions:
       packages: write
