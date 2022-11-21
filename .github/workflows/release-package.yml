@@ -1,9 +1,8 @@
 name: Build package
 
 on:
-  push:
-    branches:
-      - "*" # matches every branch that doesn't contain a '/'
+  release:
+    types: [created]
 
 jobs:
   Publish-package:
