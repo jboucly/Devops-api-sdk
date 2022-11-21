@@ -15,7 +15,9 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Set deployment token
-        run: npm config set '//https://registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+        run: |
+          echo //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN} >> .npmrc
+          cat .npmrc
 
       - name: Publish package
         run: npm publish
