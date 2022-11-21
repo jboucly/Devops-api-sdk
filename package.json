@@ -1,0 +1,25 @@
+{
+  "name": "@jboucly/devops-api-sdk",
+  "version": "0.0.1",
+  "description": "SDK for devops API",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "publishConfig": {
+    "@jboucly:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jboucly/Devops-api-sdk.git"
+  },
+  "keywords": [
+    "sdk",
+    "api"
+  ],
+  "author": "jboucly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jboucly/Devops-api-sdk/issues"
+  },
+  "homepage": "https://github.com/jboucly/Devops-api-sdk#readme"
+}
