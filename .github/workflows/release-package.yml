@@ -15,10 +15,10 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Set deployment token
-      - run: npm config set '//npm.pkg.github.com/:_authToken' "${NODE_AUTH_TOKEN}"
+        run: npm config set '//npm.pkg.github.com/:_authToken' "${NODE_AUTH_TOKEN}"
 
       - name: Publish package
-      - run: |
+        run: |
           yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PACKAGE_TOKEN}}
