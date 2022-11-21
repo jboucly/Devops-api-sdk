@@ -1,8 +1,9 @@
 name: Build package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - "*" # matches every branch that doesn't contain a '/'
 
 jobs:
   Publish-package:
@@ -15,10 +16,9 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Set deployment token
-        run: npm config set '//npm.pkg.github.com/:_authToken' "${NODE_AUTH_TOKEN}"
+        run: npm config set '//https://registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
 
       - name: Publish package
-        run: |
-          yarn publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PACKAGE_TOKEN}}
